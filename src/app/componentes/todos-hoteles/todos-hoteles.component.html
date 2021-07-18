@@ -1,0 +1,19 @@
+<br>
+<h1>Todos los hoteles registrados hasta el momento</h1>
+<br>
+
+<img class="avatar" src="assets/hotel.png"><br>
+<div class="container">
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Direccion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usua of hoteles">
+                <th scope="row">{{usua._id}}</th>
+                <td>{{usua.nombre}}</td>
+                <td>{{usua.direccion}}</td>

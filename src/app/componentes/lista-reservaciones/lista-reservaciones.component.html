@@ -1,0 +1,29 @@
+<br>
+<button type="submit" type="reset" class="btn btn-primary" routerLink="/listaHoteles" routerLinkActive="active">Regresar</button>
+
+<br>
+<div class="container">
+    <h1>Bienveni@, aquí puedes visualizar las reservaciones del Hotel</h1>
+    <br>
+
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Username</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Rol</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ev of reservacionesEncontrados">
+                <th scope="row">{{ev._id}}</th>
+                <td>{{ev.fecha_entrada}}</td>
+                <td>{{ev.fecha_salida}}</td>
+                <td>{{ev.habitacion}}</td>
+                <td>{{ev.hotel}}</td>
+        </tbody>
+
+    </table>

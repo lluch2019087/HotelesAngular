@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid" style="background-color: rgb(194, 191, 191)">
+            <a class="navbar-brand">Bienvenid@</a>
+            <form class="d-flex">
+                <input class="form-control me-2" type="text" name="nombre" #nombre="ngModel" [(ngModel)]="hotelModel.hotel">
+                <button class="btn btn-outline-success" type="submit" (click)="obtenerHotel()">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+    <br>
+    <h1>Bienvenido al gestor de Hoteles Kinalito</h1>
+    <br>
+    <h4>¿Necesitas un hotel?</h4>
+    <h5>Gracias a gestor de Hoteles puedes buscar y reservar una habitacion en tu hotel ideal</h5>
+    <br>
+
+    <div class="card-group">
+        <div class="card">
+            <img src="/assets/vista-el-hotel.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">Busca tu Hotel ideal</h5>
+                <p class="card-text">Puedes buscar el mejor hotel para ti a lo largo de nuestro pais Guatemala, ya sea por su direccion o por su nombre.</p>
+
+            </div>
+        </div>
+        <div class="card">
+            <img src="/assets/habitaciones.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Hoteles con las mejores habitaciones</h5>
+                <p class="card-text">Deseas una o varias habitaciones pues gracias a este gestor puedes elegir las que desees. </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/assets/reservaciones.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Reservar y disfruta de los mejores eventos y servicios</h5>
+                <p class="card-text">Reserva tus habitaciones y disfruta de los servicios y de los eventos que el hotel provee.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

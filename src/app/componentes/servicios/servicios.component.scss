@@ -1,0 +1,58 @@
+.texto {
+    color: white;
+    font-size: 25px;
+}
+
+.box {
+    width: 500px;
+    padding: 20px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #191919;
+    text-align: center;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+select {
+    width: 280px;
+    text-align: center;
+}
+
+.box input[type="nombre"],
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 300px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #3498db;
+}

@@ -1,0 +1,35 @@
+<br>
+<button type="submit" type="reset" class="btn btn-primary" routerLink="/listaHoteles" routerLinkActive="active">Regresar</button>
+
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-5">
+            <form class="box">
+                <h1>!Haz tu reservación¡</h1>
+                <!--<form (ngSubmit)="registrar()">-->
+                <form>
+                    <img class="avatar" src="assets/Reservacion.png">
+                    <div class="mb-3">
+                        <label for="inputNombre" class="form-label">Fecha Entrada</label><br>
+                        <input type="date" id="start" name="trip-start" min="2021-01-01" max="2025-01-01" id="inputPrecio" name="precio" #precio="ngModel" [(ngModel)]="modeloAgregarReservacion.fecha_entrada">
+                    </div>
+                    <div class="mb-3">
+                        <label for="start" class="form-label">Fecha Salida</label><br>
+                        <input type="date" id="start" name="trip-start" min="2021-01-01" max="2025-01-01" id="inputFechaSalida" name="fechaSalida" #precio="ngModel" [(ngModel)]="modeloAgregarReservacion.fecha_salida">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputHotel" class="form-label" style="margin-left:130px">Habitacion</label>
+                        <select type="text" class="form-select" style="margin-left:86px" name="habitacion" #habitacion="ngModel" [(ngModel)]="modeloAgregarReservacion.habitacion">
+              <option selected=""></option>
+              <option *ngFor="let hotl of habitaciones">{{hotl.nombre}} </option>
+              </select>
+                    </div>
+                    <br>
+
+                    <button type="reset" class="btn btn-primary" (click)="registroReservacion()">Agregar Reservacion</button>
+                </form>
+            </form>
+        </div>
+    </div>
+</div>

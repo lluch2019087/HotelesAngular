@@ -1,0 +1,54 @@
+.texto {
+    color: white;
+}
+
+.box {
+    width: 500px;
+    padding: 20px;
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #191919;
+    text-align: center;
+}
+
+.box h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 2px;
+    font-weight: 200;
+}
+
+h2 {
+    font-weight: 200;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+select {
+    width: 100px;
+    text-align: center;
+}
+
+.box input[type="Nombre"],
+.box select[type="administrador"],
+.box input[type="Direccion"],
+.box input[type="Habitaciones"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 15px 30px;
+    width: 300px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.btn {
+    background-color: rgb(96, 79, 255);
+}

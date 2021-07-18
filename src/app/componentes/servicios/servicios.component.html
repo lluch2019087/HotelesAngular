@@ -1,0 +1,35 @@
+<br>
+<button type="submit" type="reset" class="btn btn-primary" routerLink="/hoteles" routerLinkActive="active">Regresar</button>
+
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-5">
+            <!--<form (ngSubmit)="registrar()">-->
+            <form>
+                <form class="box">
+                    <h1>Bienvenido Ingresa un nuevo servicio</h1>
+                    <img class="avatar" src="assets/calendario.png">
+                    <div class="mb-3">
+                        <label for="start" class="texto"><b>Nombre Servicio</b></label><br><br>
+
+                        <input type="nombre" class="form-control" id="exampleInputNombre" aria-describedby="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="modeloServicio.nombre">
+
+                    </div>
+
+
+
+                    <div class="col-md-6">
+                        <label for="inputHotel" class="texto" style="margin-left:200px"><b>Hotel</b></label>
+                        <select type="hotel" class="form-select" style="margin-left:93px" name="hotel" #hotel="ngModel" [(ngModel)]="modeloServicio.hotel">
+              <option selected=""></option>
+              <option *ngFor="let hotl of evento" value="{{hotl._id}}">{{hotl.nombre}}</option>
+              </select>
+                    </div>
+                    <br>
+                    <button type="reset" class="btn btn-primary" (click)="registrarServicio()">Agregar Servicio</button>
+                </form>
+            </form>
+        </div>
+    </div>
+</div>

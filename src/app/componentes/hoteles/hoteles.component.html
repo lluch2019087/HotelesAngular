@@ -1,0 +1,44 @@
+<h2>Bienvenido ADMINISTRADOR</h2>
+<button type="submit" type="reset" class="btn btn-primary" routerLink="/login" routerLinkActive="active">Regresar</button>
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-5">
+            <!--<form (ngSubmit)="registrar()">-->
+            <form class="box">
+                <h1>Agregar Hotel</h1>
+                <div class="mb-3">
+
+                    <label for="inputNombre" class="texto">Nombre</label>
+                    <input type="Nombre" class="form-control" id="inputNombre" name="nombre" #nombre="ngModel" [(ngModel)]="modeloAgregarHotel.nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="inputDireccion" class="texto">Direccion</label>
+                    <input type="Direccion" class="form-control" id="inputDireccion" name="direccion" #direccion="ngModel" [(ngModel)]="modeloAgregarHotel.direccion">
+                </div>
+                <div class="mb-3">
+                    <label for="inputHabitacion" class="texto">Habitaciones</label>
+                    <input type="Habitaciones" class="form-control" id="inputHabitacion" name="habitaciones" #habitaciones="ngModel" [(ngModel)]="modeloAgregarHotel.habitaciones">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputHabitacion" class="texto" style="margin-left: 180px">Administrador del Hotel</label>
+                    <select type="administradors" class="form-select" style="margin-left:180px" name="administrador" #administrador="ngModel" [(ngModel)]="modeloAgregarHotel.administrador">
+                  <option selected=""></option>
+              <option *ngFor="let admin of usuario" value="{{admin._id}}">{{admin.nombre}}</option>
+            </select>
+                </div>
+                <br>
+                <button type="reset" class="btn btn-primary" style="margin-left:20px" (click)="registroHotel()">Registrar</button>
+                <button type="submit" type="reset" class="btn btn-primary" style="margin-left:20px" routerLink="/CRUDhoteles" routerLinkActive="active">CRUD Hoteles</button>
+                <button type="submit" type="reset" class="btn btn-primary" style="margin-left:20px" routerLink="/eventos" routerLinkActive="active">Agregar Eventos</button><br>
+                <br>
+                <button type="submit" type="reset" class="btn btn-primary" style="margin-left:20px" routerLink="/servicios" routerLinkActive="active">Agregar Servicios</button>
+
+                <br><br>
+                <button type="submit" type="reset" class="btn btn-primary" style="margin-left:22px" routerLink="/registroAdminHotel" routerLinkActive="active">Registro Admin</button>
+                <button type="submit" type="reset" class="btn btn-primary" style="margin-left:22px" routerLink="/usuarios" routerLinkActive="active">Lista Usuarios</button>
+                <button type="submit" type="reset" class="btn btn-primary" style="margin-left:22px" routerLink="/habitaciones" routerLinkActive="active">Habitaciones</button>
+            </form>
+        </div>
+    </div>
+</div>

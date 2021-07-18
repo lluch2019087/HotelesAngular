@@ -1,0 +1,123 @@
+<button type="submit" type="reset" class="btn btn-primary" routerLink="/hoteles" routerLinkActive="active">Regresar</button>
+
+<br>
+<br>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Habitaciones</th>
+            <th scope="col">Administrador</th>
+            <th scope="col">Acciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hotel of hotelesLista">
+            <th scope="row">{{hotel._id}}</th>
+            <td>{{hotel.nombre}}</td>
+            <td>{{hotel.direccion}}</td>
+            <td>{{hotel.habitaciones}}</td>
+            <td>{{hotel.administrador}}</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModalEditar" (click)="obtenerHotel(hotel._id)">Editar</button>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalEliminar" (click)="obtenerHotel(hotel._id)">Eliminar</button>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModalVer" (click)="obtenerHotel(hotel._id)">Ver</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Modal Editar hotel -->
+<div class="modal fade" id="exampleModalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Hotel</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="inputNombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="inputNombre" name="nombre" #nombre="ngModel" [(ngModel)]="modeloHotel.nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputDireccion" class="form-label">Direccion</label>
+                        <input type="text" class="form-control" id="inputDireccion" name="direccion" #direccion="ngModel" [(ngModel)]="modeloHotel.direccion">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputHabitaciones" class="form-label">Habitaciones</label>
+                        <input type="text" class="form-control" id="inputHabitaciones" name="habitaciones" #habitaciones="ngModel" [(ngModel)]="modeloHotel.habitaciones">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputAdministrador" class="form-label">Administrador</label>
+                        <input type="text" class="form-control" id="inputAdministrador" name="administrador" #administrador="ngModel" [(ngModel)]="modeloHotel.administrador">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="editarHotel()">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal ver Hotel -->
+<div class="modal fade" id="exampleModalVer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ver Hotel</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="inputNombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="inputNombre" name="nombre" #nombre="ngModel" [(ngModel)]="modeloHotel.nombre" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputDireccion" class="form-label">Direccion</label>
+                        <input type="text" class="form-control" id="inputDireccion" name="direccion" #direccion="ngModel" [(ngModel)]="modeloHotel.direccion" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputHabitaciones" class="form-label">Habitaciones</label>
+                        <input type="text" class="form-control" id="inputHabitaciones" name="habitaciones" #habitaciones="ngModel" [(ngModel)]="modeloHotel.habitaciones" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputAdministrador" class="form-label">Administrador</label>
+                        <input type="text" class="form-control" id="inputAdministrador" name="administrador" #administrador="ngModel" [(ngModel)]="modeloHotel.administrador" disabled>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Eliminar user-->
+<div class="modal fade" id="exampleModalEliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Se eliminara de forma definitiva el usuario: {{modeloHotel.nombre}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="eliminarHotel(modeloHotel._id)">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

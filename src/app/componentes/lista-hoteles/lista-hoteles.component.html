@@ -1,0 +1,21 @@
+<br>
+<button type="submit" type="reset" class="btn btn-primary" routerLink="/principal" routerLinkActive="active">Regresar</button>
+
+<body>
+    <section class="form-register">
+        <h4>¡El hotel esta a tus servicios!</h4>
+        <img class="avatar" src="assets/hotel.png">
+
+
+        <p class="card-text">Bienvenido al hotel <b>{{this._hotelService.getHotel().nombre}}</b></p>
+        <p class="card-text">Ubicado en <b>{{this._hotelService.getHotel().direccion}}</b></p>
+
+        <button type="button" class="botons" style="background-color: green" routerLink="/reservaciones" routerLinkActive="active"><b>Reservar</b></button>
+
+        <button type="button" class="botons" style="background-color: rgb(42, 86, 207)" routerLink="/listaEventos" routerLinkActive="active"><b>Eventos</b></button><br>
+        <button type="button" class="botons" style="background-color: rgb(42, 86, 207)" routerLink="/listaServicios" routerLinkActive="active"><b>Servicios</b></button>
+
+        <button type="button" class="botons" style="background-color: rgb(42, 86, 207)" routerLink="/listaHabitaciones" routerLinkActive="active"><b>Ver Habitaciones</b></button>
+    </section>
+
+</body>

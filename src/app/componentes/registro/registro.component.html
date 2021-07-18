@@ -1,0 +1,29 @@
+<html>
+<button type="submit" type="reset" class="btn btn-primary" routerLink="/login" routerLinkActive="active">Regresar</button>
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-5">
+            <!--<form (ngSubmit)="registrar()">-->
+            <form class="box">
+                <h1>Registrate</h1>
+                <img class="avatar" src="assets/registro.png">
+                <div class="mb-3">
+                    <input type="nombre" class="form-control" id="inputNombre" name="nombre" #nombre="ngModel" [(ngModel)]="modeloUsuario.nombre">
+                    <div id="emailHelp" class="texto">Ingresa un nombre</div>
+                </div>
+                <div class="mb-3">
+                    <input type="username" class="form-control" id="inputUsername" name="username" #username="ngModel" [(ngModel)]="modeloUsuario.username">
+                    <div id="emailHelp" class="texto">Ingresa un username</div>
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="password" #password="ngModel" [(ngModel)]="modeloUsuario.password">
+                    <div id="emailHelp" class="texto">Ingresa una contraseña</div>
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="registrar()">Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</html>

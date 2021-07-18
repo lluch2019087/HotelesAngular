@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+
+<div class="container" class="bg-primary">
+    <div class="row justify-content-md-center" class="bg-primary">
+        <div class="col col-lg-5">
+            <form class="box">
+                <div class="mb-3">
+                    <h1>Login</h1>
+                    <img class="avatar" src="assets/login.png">
+                    <input type="nombre" class="form-control" id="exampleInputNombre" aria-describedby="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="usuarioModel.nombre">
+                    <div id="emailHelp" class="texto">Ingresa tu Nombre</div>
+                </div>
+                <div class="mb-3">
+
+                    <input type="username" class="form-control" id="exampleInputUsername1" aria-describedby="username" name="username" #username="ngModel" [(ngModel)]="usuarioModel.username">
+                    <div id="emailHelp" class="texto">Ingresa tu Username</div>
+                </div>
+                <div class="mb-3">
+
+                    <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="password" name="password" #password="ngModel" [(ngModel)]="usuarioModel.password">
+                    <div id="emailHelp" class="texto">Ingresa tu Password</div>
+                </div>
+                <header><button type="submit" class="btn btn-primary" (click)="login()">Ingresar</button></header>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+</html>
